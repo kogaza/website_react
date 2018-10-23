@@ -10,7 +10,28 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      
+      projects: [
+        {
+          href: "https:perfect.tychy.pl/",
+          src: "/images/perfect.png",
+          alt: "perfect",
+        },
+        {
+          href: "https:tenisistaa.github.io/LionReact/",
+          src: "/images/lion.png",
+          alt: "lion",
+        },
+        {
+          href: "https:tenisistaa.github.io/events/",
+          src: "/images/events.png",
+          alt: "events",
+        },
+        {
+          href: "https://tenisistaa.github.io/forms/",
+          src: "./images/forms.png",
+          alt: "forms",
+        }
+      ]
     }
   }
   render() {
@@ -20,25 +41,25 @@ export default class App extends React.Component {
       <div className="page">
         <header>
           <div className="small-width">
-            <span className="title1">FRONT-END DEVELOPER</span>
+            <span className="title1"><Link to="/">FRONT-END DEVELOPER</Link></span>
             <div>
-              <span className="title2">KRZYSZTOF OGAZA</span>
+              <span className="title2"><Link to="/">KRZYSZTOF OGAZA</Link></span>
             </div>
           </div>
         </header>
         <nav>
           <ul>
+            {/* <li>
+              <Link to="/" activeClassName="active" activeStyle={{ color: '#ff664f', backgroundColor: '#0e3c75' }}> Home </Link>
+            </li> */}
             <li>
-              <Link to="/" activeStyle={{ color: '#ff664f', backgroundColor: '#0e3c75' }}> Home </Link>
+              <Link to="/aboutMe" activeClassName="active" activeStyle={{ color: '#ff664f', backgroundColor: '#0e3c75' }}> About me </Link>
             </li>
             <li>
-              <Link to="/aboutMe" activeStyle={{ color: '#ff664f', backgroundColor: '#0e3c75' }}> About me </Link>
+              <Link to="/myProjects" activeClassName="active" activeStyle={{ color: '#ff664f', backgroundColor: '#0e3c75' }}> My projects </Link>
             </li>
             <li>
-              <Link to="/myProjects" activeStyle={{ color: '#ff664f', backgroundColor: '#0e3c75' }}> My projects </Link>
-            </li>
-            <li>
-              <Link to="/contact" activeStyle={{ color: '#ff664f', backgroundColor: '#0e3c75' }}> Kontakt </Link>
+              <Link to="/contact" activeClassName="active" activeStyle={{ color: '#ff664f', backgroundColor: '#0e3c75' }}> Contact </Link>
             </li>
           </ul>
         </nav>
@@ -48,9 +69,15 @@ export default class App extends React.Component {
 
           <Switch>
             {/* <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} /> */}
-            <Route exact path="/" component={Home} />
-            <Route exact path='/aboutMe*' component={AboutMe} />
-            <Route exact path='/myProjects*' component={MyProjects} />
+            <Route exact path='/' component={(props) => (
+              <Home projects={this.state.projects}
+                {...props} />
+            )} />
+            <Route exact path="/aboutMe*" component={AboutMe} />
+            <Route exact path='/myProjects*' component={(props) => (
+              <MyProjects projects={this.state.projects}
+                {...props} />
+            )} />
             <Route exact path='/contact*' component={Contact} />
           </Switch>
 

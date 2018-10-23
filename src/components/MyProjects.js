@@ -2,15 +2,35 @@ import React from 'react';
 import '../App.css';
 
 
-const MyProjects = () => {
-  return (
+export default class MyProjects extends React.Component {
 
-    <div id='my-projects'>
-      
-      <h1>My projects</h1>
-    </div>
-  )
+  render() {
+    const { projects } = this.props;
+    console.log(projects);
+    const showProjects = projects.map((p, i) => {
+      return (
+        <article key={i}>
+          <a href={p.href}>
+            <img src={p.src} alt={p.alt} width="100%" />
+          </a>
+        </article>
+      )
+    })
+    return (
+      <div>
+        <section className="projects my-projects">
+          <div className="small-width">
+              <h2>My projects</h2>
+          <div className='projects-container'>
+            {showProjects}
+          </div>
+
+          </div>
+        </section>
+        
+      </div>
+    )
+  }
 }
 
 
-export default MyProjects;
