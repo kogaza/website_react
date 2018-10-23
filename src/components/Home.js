@@ -29,9 +29,9 @@ export default class Home extends React.Component {
             </article>
             <article className='text show-elem'>
               <p>
-                Hello, I'm Krzysztof Ogaza. <br />
-                I'm a front-end developer. <br />
-                I'll create for you a website ideally suited to your expectations.
+                Hello, I'm <mark className='colorText'>Krzysztof Ogaza</mark> <br />
+                I'm a front-end developer <br />
+                I'll create for you a website ideally suited to your expectations
           </p>
             </article>
           </div>

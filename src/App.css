@@ -75,8 +75,6 @@ nav li a:hover {
   background-color: #0e3c75;
 }
 
-
-
 #about-me, #home, .projects, .skills, footer, mark {
   background-color: #267de8;
 }
@@ -95,7 +93,7 @@ nav li a:hover {
   font-weight: bold;
   line-height: 50px;
 }
-#about-me .small-width .text, #home .small-width .text {
+.text {
   flex: 2;
   padding-left: 0;
   display: flex;
@@ -274,6 +272,13 @@ footer {
 
 /* ---------------------------------------------------------max-width: 1024px */
 @media screen and (max-width: 1024px) {
+  header {
+    margin-bottom: 50px;
+  }
+  #about-me .small-width .picture, #home .small-width .picture {
+    width: 200px;
+    height: 180px;
+  }
   .small-width {
     max-width: 100%;
     width: auto;
@@ -282,15 +287,23 @@ footer {
     padding: 16px;
   }
   header .small-width {
-    line-height: 13px;
+    line-height: 16px;
   }
-  header .small-width .title1 {
+  #home .small-width article, #about-me .small-width article {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
     font-size: 20px;
+    line-height: 30px;
   }
-  header .small-width .title2 {
-    font-size: 14px;
+  header .small-width .title1 a {
+    font-size: 35px;
   }
-  header .small-width .title3 {
+  header .small-width .title2 a {
+    font-size: 23px;
+  }
+  header .small-width .title3 a {
     font-size: 10px;
   }
   nav {
@@ -333,8 +346,44 @@ footer {
     padding: 10px;
     animation: mobile-fotter 0.8s linear both 1s;
   }
+}
 
+/* ---------------------------------------------------------max-width: 900px */
+@media screen and (max-width: 900px) {
+  .contacts-home .contacts-element {
+    width: 40%;
+    margin: 10px;
+  }
+}
 
+/* ---------------------------------------------------------max-width: 550px */
+@media screen and (max-width: 550px) {
+  #about-me .small-width .picture, #home .small-width .picture {
+    width: 160px;
+    height: 140px;
+  }
+  .text {
+    margin-left: 10px;
+  }
+  header .small-width {
+    line-height: 14px;
+  }
+  header .small-width .title1 a {
+    font-size: 24px;
+  }
+  header .small-width .title2 a {
+    font-size: 18px;
+  }
+  #home .small-width article {
+    font-size: 16px;
+  }
+  .projects article {
+    width: 90%;
+  }
+  .contacts-home .contacts-element {
+    width: 70%;
+    margin: 5px;
+  }
 }
 
 
