@@ -1,5 +1,7 @@
 import React from 'react';
 import '../App.css';
+import { NavLink as Link } from 'react-router-dom';
+
 
 
 export default class Home extends React.Component {
@@ -41,7 +43,9 @@ export default class Home extends React.Component {
             {showProjects}
             </div>
             <span className="see-more">
+            <Link to='/myProjects'>
               See more
+            </Link>
             </span>
           </div>
         </section>

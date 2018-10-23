@@ -148,8 +148,11 @@ nav li a:hover {
   justify-content: center;
   padding: 10px;
 }
-
-.projects .see-more:hover {
+.projects .see-more a{
+  color: white;
+  text-decoration: none;
+}
+.projects .see-more a:hover {
   cursor: pointer;
   color: #FFEC0D
 }
