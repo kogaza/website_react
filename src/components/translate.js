@@ -11,7 +11,7 @@ export const translate = (lang) => {
     "Jestem absolwentem bootcampu prowadzonego przez CodersLab",
     "W swoich projektach uwzględniam wszystkie zaproponowane rozwiązania.",
     "Staram się stale rozwijać, tak aby efekty mojej pracy były coraz lepsze.",
-    "W ostatnim czasie miałem okazję poznać React-Native czego efektem jest stworzenie gry.", //10
+    "W ostatnim czasie miałem okazję poznać React-Native czego efektem jest stworzenie gry", //10
     "Zapraszam do współpracy!",
     "wszelkie prawa zastrzeżone"
   ];

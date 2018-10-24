@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-
+import { NavLink as Link } from 'react-router-dom';
 
 export default class Home extends React.Component {
 
@@ -33,7 +33,7 @@ export default class Home extends React.Component {
                 <mark className='colorText'>"JavaScript developer: React"</mark> <br />
                 {texts[8]} <br />
                 {texts[9]} <br />
-                {texts[10]} "Memoo". <br />
+                {texts[10]} <Link to='/memoo' className='colorText' >"Memoo".</Link> <br />
                 {texts[11]}
               </p>
             </article>

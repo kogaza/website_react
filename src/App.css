@@ -115,9 +115,9 @@ nav li a:hover {
 }
 #about-me .small-width article, #home .small-width article {
   text-align: left;
-  padding: 3% 2%;
+  padding: 3% 0;
   color: rgb(255, 255, 255);
-  width: 35%;
+  width: 26%;
   height: 300px; 
   font-size: 22px;
   font-weight: bold;
@@ -134,8 +134,8 @@ nav li a:hover {
   background: grey;
   background-image: url('./images/cv.jpg');
   background-size: cover;
-  width: 270px;
-  height: 240px;
+  width: 240px;
+  height: 220px;
 }
 .projects {
   display: flex;
@@ -208,11 +208,33 @@ nav li a:hover {
   align-items: center;
   color: white;
 }
+.skills .small-width a {
+  font-size: 20px;
+  text-decoration: none;
+}
+.skills .small-width a:hover {
+  color: #f55050;
+}
 .colorText {
   color: #FFEC0D;
   font-weight: bold;
 }
-
+#memoo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pictures-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 1024px;
+  margin-top: 30px;
+}
+.picture {
+  width: 200px;
+  cursor: pointer;
+}
 .contacts-home .small-width {
   display: flex;
   flex-wrap: wrap;
