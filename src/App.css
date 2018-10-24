@@ -289,9 +289,7 @@ footer {
 
 /* ---------------------------------------------------------max-width: 1024px */
 @media screen and (max-width: 1024px) {
-  header {
-    margin-bottom: 50px;
-  }
+
   #about-me .small-width .picture, #home .small-width .picture {
     width: 200px;
     height: 180px;
@@ -323,8 +321,33 @@ footer {
   header .small-width .title3 a {
     font-size: 10px;
   }
-  .hamburger {
-    top: 80px;
+
+  
+  #about-me .small-width, #home .small-width {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contacts a {
+    font-size: 20px;
+  }
+  footer {
+    font-size: 10px;
+    padding: 10px;
+    animation: mobile-fotter 0.8s linear both 1s;
+  }
+}
+
+/* ---------------------------------------------------------max-width: 900px */
+@media screen and (max-width: 900px) {
+  header {
+    margin-bottom: 50px;
+  }
+  .contacts-home .contacts-element {
+    width: 40%;
+    margin: 10px;
+  }
+  .contacts a {
+    font-size: 16px;
   }
   nav {
     position: fixed;
@@ -356,31 +379,11 @@ footer {
     font-size: 24px;
     text-decoration: none;
   }
-  #about-me .small-width, #home .small-width {
-    flex-direction: column;
-    align-items: center;
-  }
-  .contacts a {
-    font-size: 20px;
-  }
-  footer {
-    font-size: 10px;
-    padding: 10px;
-    animation: mobile-fotter 0.8s linear both 1s;
-  }
-}
-
-/* ---------------------------------------------------------max-width: 900px */
-@media screen and (max-width: 900px) {
-  .contacts-home .contacts-element {
-    width: 40%;
-    margin: 10px;
-  }
-  .contacts a {
-    font-size: 16px;
-  }
   .hamburger {
     top: 75px;
+  }
+  .hamburger .rectangle {
+    height: 5px;
   }
 }
 
@@ -419,15 +422,25 @@ footer {
   .hamburger {
     top: 55px;
   }
-  .hamburger .rectangle {
-    height: 5px;
-  }
+
   nav {
     left: 25%;
     width: 50%;
   }
 }
 
+@media screen and (max-width: 600px) and (orientation: portrait) {
+  .contacts a {
+    font-size: 20px;
+    padding: 20px 0; 
+  }
+}
+@media screen and (max-width: 400px) and (orientation: portrait) {
+  .contacts a {
+    font-size: 16px;
+    padding: 10px 0; 
+  }
+}
 
 
 

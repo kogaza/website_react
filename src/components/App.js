@@ -31,11 +31,57 @@ export default class App extends React.Component {
           src: "./images/forms.png",
           alt: "forms",
         }
-      ]
+      ],
+      hamburger: true,
     }
   }
-  render() {
 
+  showHamburger = () => {
+    const { hamburger } = this.state;
+    if ((!hamburger && window.innerWidth <= 900) || (hamburger && window.innerWidth > 900)) {
+      this.setState({
+        hamburger: !hamburger
+      });
+    }
+  }
+
+  showMobileMenu = (arg) => {
+    console.log(arg)
+    if (window.innerWidth < 900) {
+      if (arg === 'showMenu') {
+        this.setState({
+          hamburger: false
+        })
+      } else if (arg === 'showHamburger') {
+        this.setState({
+          hamburger: true
+        })
+      }
+    }
+  }
+
+  render() {
+    window.addEventListener('resize', this.showHamburger);
+    const navigation = this.state.hamburger ?
+      <div className='hamburger' onClick={() => this.showMobileMenu('showMenu')}>
+        <div className='rectangle'></div>
+        <div className='rectangle'></div>
+        <div className='rectangle'></div>
+      </div>
+      :
+      <nav>
+        <ul>
+          <li onClick={() => this.showMobileMenu('showHamburger')}>
+            <Link to="/aboutMe" activeClassName="active" activeStyle={{ color: '#ff664f', backgroundColor: '#0e3c75' }}> About me </Link>
+          </li>
+          <li onClick={() => this.showMobileMenu('showHamburger')}>
+            <Link to="/myProjects" activeClassName="active" activeStyle={{ color: '#ff664f', backgroundColor: '#0e3c75' }}> My projects </Link>
+          </li>
+          <li onClick={() => this.showMobileMenu('showHamburger')}>
+            <Link to="/contact" activeClassName="active" activeStyle={{ color: '#ff664f', backgroundColor: '#0e3c75' }}> Contact </Link>
+          </li>
+        </ul>
+      </nav>
 
     return (
       <div className="page">
@@ -47,27 +93,8 @@ export default class App extends React.Component {
             </div>
           </div>
         </header>
-        <div className='hamburger'>
-          <div className='rectangle'></div>
-          <div className='rectangle'></div>
-          <div className='rectangle'></div>
-        </div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/aboutMe" activeClassName="active" activeStyle={{ color: '#ff664f', backgroundColor: '#0e3c75' }}> About me </Link>
-            </li>
-            <li>
-              <Link to="/myProjects" activeClassName="active" activeStyle={{ color: '#ff664f', backgroundColor: '#0e3c75' }}> My projects </Link>
-            </li>
-            <li>
-              <Link to="/contact" activeClassName="active" activeStyle={{ color: '#ff664f', backgroundColor: '#0e3c75' }}> Contact </Link>
-            </li>
-          </ul>
-        </nav>
-
+        {navigation}
         <div>
-
           <Switch>
             {/* <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} /> */}
             <Route exact path='/' component={(props) => (
@@ -81,9 +108,7 @@ export default class App extends React.Component {
             )} />
             <Route exact path='/contact*' component={Contact} />
           </Switch>
-
         </div>
-
         <footer>
           <span>
             Copyright © 2017 Krzysztof Ogaza all rights reserved
