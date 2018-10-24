@@ -6,7 +6,6 @@ export default class MyProjects extends React.Component {
 
   render() {
     const { projects } = this.props;
-    console.log(projects);
     const showProjects = projects.map((p, i) => {
       return (
         <article key={i}>

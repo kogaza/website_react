@@ -46,7 +46,6 @@ export default class App extends React.Component {
   }
 
   showMobileMenu = (arg) => {
-    console.log(arg)
     if (window.innerWidth < 900) {
       if (arg === 'showMenu') {
         this.setState({
