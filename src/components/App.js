@@ -47,11 +47,13 @@ export default class App extends React.Component {
             </div>
           </div>
         </header>
+        <div className='hamburger'>
+          <div className='rectangle'></div>
+          <div className='rectangle'></div>
+          <div className='rectangle'></div>
+        </div>
         <nav>
           <ul>
-            {/* <li>
-              <Link to="/" activeClassName="active" activeStyle={{ color: '#ff664f', backgroundColor: '#0e3c75' }}> Home </Link>
-            </li> */}
             <li>
               <Link to="/aboutMe" activeClassName="active" activeStyle={{ color: '#ff664f', backgroundColor: '#0e3c75' }}> About me </Link>
             </li>
@@ -63,7 +65,6 @@ export default class App extends React.Component {
             </li>
           </ul>
         </nav>
-        {/* <div className="small-width"> */}
 
         <div>
 

@@ -48,6 +48,23 @@ header .small-width .title2 a {
 header .small-width .title3 {
   font-size: 23px;
 }
+.hamburger {
+  position: absolute;
+  top: 60px;
+  left: 45%;
+  width: 10%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.hamburger .rectangle {
+  width: 50px;
+  height: 10px;
+  background-color: #f55050;
+  margin: 5px;
+}
 nav ul {
   display: flex;
   justify-content: center;
@@ -87,7 +104,7 @@ nav li a:hover {
   text-align: left;
   padding: 3% 2%;
   color: rgb(255, 255, 255);
-  width: 40%;
+  width: 35%;
   height: 300px; 
   font-size: 22px;
   font-weight: bold;
@@ -306,40 +323,45 @@ footer {
   header .small-width .title3 a {
     font-size: 10px;
   }
+  .hamburger {
+    top: 80px;
+  }
   nav {
     position: fixed;
-    top: 18px;
-    right: 10px;
+    top: 90px;
+    left: 35%;
+    width: 30%;
     z-index: 20;
   }
   nav ul {
     flex-direction: column;
     align-items: flex-end;
+    width: 100%;
+
   }
   nav li {
     list-style-type: none;
-    background-color: blue;
     text-align: center;
-    width: 24px;
-    height: 4px;
-    margin: 1.5px;
-    color: rgba(255,255,255,0);
-    font-size: 0;
-    transition: 0.5s;
+    margin: 0;
+    margin-bottom: 10%;
+    width: 100%;
+
   }
-  .nav-li {
-    width: 150px;
-    height: auto;
-    color: white;
-    font-size: 16px;
-    padding: 10px;
-    margin: 10px 0;
-    transition: 0.5s;
+  nav li a {
+    background-color: #faf29c;
     border-radius: 5px;
+    width: 100%;
+    color: red;
+    font-weight: bold;
+    font-size: 24px;
+    text-decoration: none;
   }
   #about-me .small-width, #home .small-width {
     flex-direction: column;
     align-items: center;
+  }
+  .contacts a {
+    font-size: 20px;
   }
   footer {
     font-size: 10px;
@@ -354,6 +376,12 @@ footer {
     width: 40%;
     margin: 10px;
   }
+  .contacts a {
+    font-size: 16px;
+  }
+  .hamburger {
+    top: 75px;
+  }
 }
 
 /* ---------------------------------------------------------max-width: 550px */
@@ -366,13 +394,13 @@ footer {
     margin-left: 10px;
   }
   header .small-width {
-    line-height: 14px;
+    line-height: 11px;
   }
   header .small-width .title1 a {
-    font-size: 24px;
+    font-size: 20px;
   }
   header .small-width .title2 a {
-    font-size: 18px;
+    font-size: 14px;
   }
   #home .small-width article {
     font-size: 16px;
@@ -383,6 +411,20 @@ footer {
   .contacts-home .contacts-element {
     width: 70%;
     margin: 5px;
+  }
+  .contacts .contacts-element {
+    width: 70%;
+    height: auto;
+  }
+  .hamburger {
+    top: 55px;
+  }
+  .hamburger .rectangle {
+    height: 5px;
+  }
+  nav {
+    left: 25%;
+    width: 50%;
   }
 }
 
