@@ -329,7 +329,7 @@ footer {
     font-size: 20px;
   }
   footer {
-    font-size: 10px;
+    font-size: 16px;
     padding: 10px;
     animation: mobile-fotter 0.8s linear both 1s;
   }
@@ -457,6 +457,14 @@ footer {
 }
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
+  #home .small-width article, #about-me .small-width article {
+    text-align: center;
+    font-size: 19px;
+    line-height: 26px;
+  }
+  .skills .small-width {
+    font-size: 18px;
+  }
   .contacts a {
     font-size: 20px;
     padding: 20px 0; 
@@ -474,6 +482,14 @@ footer {
   }
 }
 @media screen and (max-width: 400px) and (orientation: portrait) {
+  #home .small-width article, #about-me .small-width article {
+    text-align: center;
+    font-size: 17px;
+    line-height: 24px;
+  }
+  .skills .small-width {
+    font-size: 16px;
+  }
   .contacts a {
     font-size: 16px;
     padding: 10px 0; 

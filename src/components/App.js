@@ -4,6 +4,7 @@ import Home from './Home';
 import AboutMe from './AboutMe';
 import MyProjects from './MyProjects';
 import Contact from './Contact';
+import { translate } from './translate'
 import '../App.css';
 
 export default class App extends React.Component {
@@ -34,10 +35,12 @@ export default class App extends React.Component {
       ],
       hamburger: true,
       language: 'polish',
+      texts: []
     }
   }
   componentDidMount() {
     this.showHamburger();
+    this.translateTexts('polish');
   }
 
   showHamburger = () => {
@@ -63,22 +66,25 @@ export default class App extends React.Component {
     }
   }
 
+  translateTexts = (lang) => {
+    let texts = translate(lang);
+    this.setState({
+      texts
+    })
+  }
+
   changeLanguage = (lang) => {
     this.showMobileMenu('showHamburger');
-    if (lang === 'polish') {
-      this.setState({
-        language: 'polish',
-      })
-    } else if (lang === 'british') {
-      this.setState({
-        language: 'british',
-      })
-    }
+    this.translateTexts(lang);
+    this.setState({
+      language: 'polish',
+    })
   }
 
   render() {
+    const { hamburger, projects, texts } = this.state;
     window.addEventListener('resize', this.showHamburger);
-    const navigation = this.state.hamburger ?
+    const navigation = hamburger ?
       <div className='hamburger' onClick={() => this.showMobileMenu('showMenu')}>
         <div className='rectangle'></div>
         <div className='rectangle'></div>
@@ -98,14 +104,12 @@ export default class App extends React.Component {
           </li>
         </ul>
       </nav>
-    const flags = this.state.hamburger ?
-      null
-      :
+    const flags = hamburger ? null :
       <div>
         <div className='flag polandFlag' onClick={() => this.changeLanguage('polish')}>
           <img src='/images/PolandFlag.png' alt='Poland flag' width='100%'></img>
         </div>
-        <div className='flag britainFlag' onClick={() => this.changeLanguage('british')}>
+        <div className='flag britainFlag' onClick={() => this.changeLanguage('english')}>
           <img src='/images/BritainFlag.png' alt='Britain flag' width='100%'></img>
         </div>
       </div>
@@ -124,12 +128,15 @@ export default class App extends React.Component {
           <Switch>
             {/* <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} /> */}
             <Route exact path='/' component={(props) => (
-              <Home projects={this.state.projects}
+              <Home projects={projects}
                 {...props} />
             )} />
-            <Route exact path="/aboutMe*" component={AboutMe} />
+            <Route exact path='/aboutMe' component={(props) => (
+              <AboutMe texts={texts}
+                {...props} />
+            )} />
             <Route exact path='/myProjects*' component={(props) => (
-              <MyProjects projects={this.state.projects}
+              <MyProjects projects={projects}
                 {...props} />
             )} />
             <Route exact path='/contact*' component={Contact} />
@@ -137,8 +144,8 @@ export default class App extends React.Component {
         </div>
         <footer>
           <span>
-            Copyright © 2017 Krzysztof Ogaza all rights reserved
-        </span>
+            Copyright © 2017 Krzysztof Ogaza {texts[12]}
+          </span>
         </footer>
       </div>
 
