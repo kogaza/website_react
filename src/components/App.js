@@ -33,7 +33,11 @@ export default class App extends React.Component {
         }
       ],
       hamburger: true,
+      language: 'polish',
     }
+  }
+  componentDidMount() {
+    this.showHamburger();
   }
 
   showHamburger = () => {
@@ -59,6 +63,19 @@ export default class App extends React.Component {
     }
   }
 
+  changeLanguage = (lang) => {
+    this.showMobileMenu('showHamburger');
+    if (lang === 'polish') {
+      this.setState({
+        language: 'polish',
+      })
+    } else if (lang === 'british') {
+      this.setState({
+        language: 'british',
+      })
+    }
+  }
+
   render() {
     window.addEventListener('resize', this.showHamburger);
     const navigation = this.state.hamburger ?
@@ -81,15 +98,25 @@ export default class App extends React.Component {
           </li>
         </ul>
       </nav>
+    const flags = this.state.hamburger ?
+      null
+      :
+      <div>
+        <div className='flag polandFlag' onClick={() => this.changeLanguage('polish')}>
+          <img src='/images/PolandFlag.png' alt='Poland flag' width='100%'></img>
+        </div>
+        <div className='flag britainFlag' onClick={() => this.changeLanguage('british')}>
+          <img src='/images/BritainFlag.png' alt='Britain flag' width='100%'></img>
+        </div>
+      </div>
 
     return (
       <div className="page">
         <header>
           <div className="small-width">
             <span className="title1"><Link to="/">FRONT-END DEVELOPER</Link></span>
-            <div>
-              <span className="title2"><Link to="/">KRZYSZTOF OGAZA</Link></span>
-            </div>
+            <span className="title2"><Link to="/">KRZYSZTOF OGAZA</Link></span>
+            {flags}
           </div>
         </header>
         {navigation}
