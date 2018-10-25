@@ -105,7 +105,7 @@ nav li a:hover {
   background-color: #0e3c75;
 }
 
-#about-me, #home, .projects, .skills, footer, mark {
+#about-me, #home, .projects, .skills, footer, mark, #memoo {
   background-color: #267de8;
 }
 #about-me .small-width, #home .small-width {
@@ -224,12 +224,61 @@ nav li a:hover {
   flex-direction: column;
   align-items: center;
 }
-.pictures-container {
+.game-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   width: 1024px;
-  margin-top: 30px;
+  margin: 30px;
+}
+.game-image {
+  flex: 1;
+  cursor: pointer;
+}
+.game-info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  margin-top: 50px;
+}
+.game-description {
+  margin: 0 50px;
+  border-radius: 5px;
+  /* background-color: #faf29c; */
+}
+.game-description p {
+  font-size: 20px;
+  margin: 15px;
+  /* color: #267de8 */
+}
+.game-belt {
+  margin: 25px;
+  border-top: 1px solid white;
+}
+.belt1 {
+  width: 300px;
+}
+.belt2 {
+  width: 450px;
+}
+.game-info h1 {
+  font-size: 40px;
+}
+.download {
+  padding: 20px;
+  background-color: #faf29c;
+  border-radius: 5px;
+}
+.download a {
+  color: #f55050;
+  text-decoration: none;
+  font-size: 20px;
+}
+.download a:hover {
+  color: #f03b3b;
+  font-weight: bold;
 }
 .picture {
   width: 200px;

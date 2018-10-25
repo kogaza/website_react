@@ -16,21 +16,43 @@ export default class Memoo extends Component {
   render() {
     const { photoIndex, isOpen } = this.state;
     const { pictures } = this.props;
-    const showPictures = pictures.map((p, i) => {
-      return (
-        <div className='picture'>
-          <img src={p} width='100%' alt='memoo' onClick={() => this.setState({ isOpen: true })} />
-        </div>
-
-      )
-    })
+    const showPictures = <img
+      onClick={() => this.setState({ isOpen: true })}
+      src={pictures[2]}
+      alt='memoo'
+      width='100%'
+    />;
 
     return (
       <div id='memoo'>
-      <h1>Memoo game</h1>
-      <div className='pictures-container'>
-        {showPictures}
-      </div>
+        <div className='game-container'>
+          <div className='game-image'>
+            {showPictures}
+          </div>
+          <div className='game-info'>
+            <h1>Memoo game</h1>
+            <span>for Android</span>
+            <div className='game-belt belt1'></div>
+            <div className='download'>
+              <a download='memooGame.apk' target='_blank' href='/gameInstaller/memooGame.apk'>
+                Download APK file
+            </a>
+            </div>
+            <div className='game-belt belt2'></div>
+            <div className='game-description'>
+              <p>
+                Memoo is a game where you need to match pairs of tiles. You turn over one tiles
+                and try to find a matching tile.
+            </p>
+            <p>
+              The game has 3 game levels.
+            </p>
+            <p>
+              There are 3 languages available: Polish, English and Croatian.
+            </p>
+            </div>
+          </div>
+        </div>
         {isOpen && (
           <Lightbox
             mainSrc={pictures[photoIndex]}
@@ -52,24 +74,6 @@ export default class Memoo extends Component {
       </div>
     );
 
-
-    // const showPictures = pictures.map((p, i) => {
-    //   return (
-    //     <div className='picture'>
-    //       <img src={p.src} alt={p.alt} width="100%" />
-    //     </div>
-    //   )
-    // })
-    // return (
-    //   <section id='memoo'>
-    //     <div className='small-width'>
-    //       <h1>Memoo game</h1>
-    //       <div className='pictures-container'>
-    //         {showPictures}
-    //       </div>
-    //     </div>
-    //   </section>
-    // )
 
   }
 }
