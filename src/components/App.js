@@ -35,10 +35,10 @@ export default class App extends React.Component {
         }
       ],
       pictures: [
-        "/images/polish/screen1.png",
-        "/images/polish/screen2.png",
-        "/images/polish/screen3.png",
-        "/images/polish/screen4.png",
+        "screen1.png",
+        "screen2.png",
+        "screen3.png",
+        "screen4.png",
       ],
       hamburger: true,
       language: 'polish',
@@ -84,7 +84,7 @@ export default class App extends React.Component {
     this.showMobileMenu('showHamburger');
     this.translateTexts(lang);
     this.setState({
-      language: 'polish',
+      language: lang,
     })
   }
 
@@ -147,7 +147,7 @@ export default class App extends React.Component {
                 {...props} />
             )} />
             <Route exact path='/memoo*' component={(props) => (
-              <Memoo language={language} pictures={pictures}
+              <Memoo texts={texts} language={language} pictures={pictures}
                 {...props} />
             )} />
             <Route exact path='/contact*' component={Contact} />

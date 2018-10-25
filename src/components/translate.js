@@ -13,7 +13,13 @@ export const translate = (lang) => {
     "Staram się stale rozwijać, tak aby efekty mojej pracy były coraz lepsze.",
     "W ostatnim czasie miałem okazję poznać React-Native czego efektem jest stworzenie gry", //10
     "Zapraszam do współpracy!",
-    "wszelkie prawa zastrzeżone"
+    "wszelkie prawa zastrzeżone",
+    "Gra Memoo",
+    "dla Androida",
+    "Pobierz plik APK", //15
+    "Memoo to gra, w której musisz znaleźć pasujące do siebie pary. Odwracasz jedną płytkę i próbujesz znaleźć drugą pasującą do pierwszej.",
+    "Gra posiada 3 poziomy trudności.",
+    "Dostępne są 3 języki: polski, angielski oraz chorwacki"
   ];
   const english = [
     "About me",
@@ -28,7 +34,13 @@ export const translate = (lang) => {
     "I try to constantly develop, so that the results of my work will be better and better.",
     "Recently I had the opportunity to meet React-Native the result is the creation of the game", //10
     "I invite you to cooperation!",
-    "all rigths reserved"
+    "all rigths reserved",
+    "Memoo game",
+    "for Android",
+    "Download APK file", // 15
+    "Memoo is a game where you need to match pairs of tiles. You turn over one tiles and try to find a matching tile.",
+    "The game has 3 levels of difficulty.",
+    "There are 3 languages available: Polish, English and Croatian."
   ]
   const language = (lang === 'polish') ? polish : english;
   return (
