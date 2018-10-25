@@ -54,6 +54,7 @@ header .small-width .title3 {
   width: 50px;
   height: 30px;
   cursor: pointer;
+  z-index: 19;
 }
 .polandFlag {
   right: 70px;
@@ -77,6 +78,15 @@ header .small-width .title3 {
   height: 10px;
   background-color: #f55050;
   margin: 5px;
+}
+.darkBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 110vh;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 18;
 }
 nav ul {
   display: flex;
@@ -221,14 +231,14 @@ nav li a:hover {
 }
 #memoo {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 .game-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 1024px;
+  max-width: 1024px;
   margin: 30px;
 }
 .game-image {
@@ -244,7 +254,7 @@ nav li a:hover {
   margin-top: 50px;
 }
 .game-description {
-  margin: 0 50px;
+  margin: 0 50px 50px 50px;
   border-radius: 5px;
   /* background-color: #faf29c; */
 }
@@ -470,7 +480,27 @@ footer {
   .hamburger .rectangle {
     height: 5px;
   }
-  
+  .game-container {
+    flex-direction: column-reverse;
+    max-width: 1024px;
+    margin: 30px;
+    align-items: center
+  }
+  .game-image {
+    width: 70%;
+  }
+  .belt1 {
+    width: 70%;
+  }
+  .belt2 {
+    width: 90%;
+  }
+  .game-info {
+    margin-top: 10px;
+  }
+  .game-description p {
+    text-align: center;
+  }
 }
 
 /* ---------------------------------------------------------max-width: 550px */
@@ -527,14 +557,20 @@ footer {
   }
 }
 
+/* ----------------------------------------------- portrait - max-width: 600px */
 @media screen and (max-width: 600px) and (orientation: portrait) {
   #home .small-width article, #about-me .small-width article {
     text-align: center;
     font-size: 19px;
     line-height: 26px;
   }
-  .skills .small-width {
+  .skills {
+    margin-top: 20px;
+    padding-top: 0;
+  }
+  .skills .small-width, .skills .small-width a {
     font-size: 18px;
+    padding: 5px;
   }
   .contacts a {
     font-size: 20px;
@@ -551,25 +587,49 @@ footer {
   .britainFlag {
     right: 10px;
   }
+  .game-description {
+    margin: 0 0 10px 0;
+  }
+  .game-description p {
+    margin: 0;
+    margin-bottom: 5px;
+  }
+  .game-image {
+    width: 100%;
+  }
+  footer {
+    margin-top: 20px;
+    font-size: 12px;
+  }
 }
+
+/* ----------------------------------------------- portrait - max-width: 400px */
 @media screen and (max-width: 400px) and (orientation: portrait) {
   #home .small-width article, #about-me .small-width article {
     text-align: center;
     font-size: 17px;
     line-height: 24px;
   }
-  .skills .small-width {
+  .skills .small-width, .skills .small-width a {
     font-size: 16px;
   }
   .contacts a {
     font-size: 16px;
     padding: 10px 0; 
   }
+  nav li a {
+    font-size: 20px;
+  }
   .flag {
     width: 60px;
     height: 35px;
   }
-
+  .game-description p {
+    font-size: 16px;
+  }
+  footer {
+    font-size: 10px;
+  }
 }
 
 

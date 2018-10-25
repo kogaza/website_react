@@ -19,6 +19,16 @@ export default class App extends React.Component {
           alt: "perfect",
         },
         {
+          href: "",
+          src: "/images/fotoDawid.png",
+          alt: "foto_dawid",
+        },
+        {
+          href: "/memoo",
+          src: "/images/memooPL.png",
+          alt: "memoo",
+        },
+        {
           href: "https:tenisistaa.github.io/LionReact/",
           src: "/images/lion.png",
           alt: "lion",
@@ -120,6 +130,8 @@ export default class App extends React.Component {
           <img src='/images/BritainFlag.png' alt='Britain flag' width='100%'></img>
         </div>
       </div>
+      const darkBackground = (hamburger || window.innerWidth >= 900) ? null :
+      <div className='darkBackground'></div>
 
     return (
       <div className="page">
@@ -130,6 +142,7 @@ export default class App extends React.Component {
             {flags}
           </div>
         </header>
+        {darkBackground}
         {navigation}
         <div>
           <Switch>
@@ -143,7 +156,7 @@ export default class App extends React.Component {
                 {...props} />
             )} />
             <Route exact path='/myProjects*' component={(props) => (
-              <MyProjects projects={projects}
+              <MyProjects projects={projects} texts={texts}
                 {...props} />
             )} />
             <Route exact path='/memoo*' component={(props) => (

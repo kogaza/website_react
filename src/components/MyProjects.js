@@ -5,7 +5,7 @@ import '../App.css';
 export default class MyProjects extends React.Component {
 
   render() {
-    const { projects } = this.props;
+    const { projects, texts } = this.props;
     const showProjects = projects.map((p, i) => {
       return (
         <article key={i}>
@@ -19,7 +19,7 @@ export default class MyProjects extends React.Component {
       <div>
         <section className="projects my-projects">
           <div className="small-width">
-              <h2>My projects</h2>
+              <h2>{texts[1]}</h2>
           <div className='projects-container'>
             {showProjects}
           </div>
