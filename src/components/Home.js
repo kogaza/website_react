@@ -14,7 +14,7 @@ export default class Home extends React.Component {
       return (
         <article key={i}>
           <a href={p.href}>
-            <img src={p.src} alt={p.alt} width="100%" />
+            <img src={p.src} alt={p.alt} width="100%" height="100%" />
           </a>
         </article>
       )
@@ -38,13 +38,13 @@ export default class Home extends React.Component {
         </section>
         <section className="projects">
           <div className="small-width">
-            <h2>My projects</h2>
+            <h2>{texts[1]}</h2>
             <div className='projects-container'>
               {showProjects}
             </div>
             <span className="see-more">
               <Link to='/myProjects'>
-                See more
+                {texts[19]}
             </Link>
             </span>
           </div>

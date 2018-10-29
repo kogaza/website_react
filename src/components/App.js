@@ -14,27 +14,27 @@ export default class App extends React.Component {
     this.state = {
       projects: [
         {
-          href: "https:perfect.tychy.pl/",
+          href: "https://perfect.tychy.pl/",
           src: "/images/perfect.png",
           alt: "perfect",
         },
         {
-          href: "",
+          href: "https://fotodawid.eu",
           src: "/images/fotoDawid.png",
           alt: "foto_dawid",
         },
         {
-          href: "/memoo",
+          href: "/#/memoo",
           src: "/images/memooPL.png",
           alt: "memoo",
         },
         {
-          href: "https:tenisistaa.github.io/LionReact/",
+          href: "https://tenisistaa.github.io/LionReact/",
           src: "/images/lion.png",
           alt: "lion",
         },
         {
-          href: "https:tenisistaa.github.io/events/",
+          href: "https://tenisistaa.github.io/events/",
           src: "/images/events.png",
           alt: "events",
         },
@@ -147,11 +147,15 @@ export default class App extends React.Component {
         <div>
           <Switch>
             {/* <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} /> */}
+            {/* <Route exact path={process.env.PUBLIC_URL + '/'} component={(props) => (
+              <Home projects={projects} texts={texts}
+                {...props} />
+            )} /> */}
             <Route exact path='/' component={(props) => (
               <Home projects={projects} texts={texts}
                 {...props} />
             )} />
-            <Route exact path='/aboutMe' component={(props) => (
+            <Route exact path='/aboutMe*' component={(props) => (
               <AboutMe texts={texts}
                 {...props} />
             )} />

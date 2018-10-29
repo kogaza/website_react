@@ -393,7 +393,7 @@ footer {
     width: auto;
   }
   #home .small-width article, #about-me .small-width article {
-    width: 100%;
+    width: auto;
     height: auto;
     display: flex;
     justify-content: center;
@@ -576,8 +576,13 @@ footer {
     font-size: 20px;
     padding: 20px 0; 
   }
+  .projects {
+    margin-top: 20px;
+  }
+  .contacts-home .small-width {
+    margin-top: 10px;
+  }
   .flag {
-    border: 1px solid #267de8;
     width: 75px;
     height: 45px;
   }

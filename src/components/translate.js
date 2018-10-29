@@ -19,7 +19,8 @@ export const translate = (lang) => {
     "Pobierz plik APK", //15
     "Memoo to gra, w której musisz znaleźć pasujące do siebie pary. Odwracasz jedną płytkę i próbujesz znaleźć drugą pasującą do pierwszej.",
     "Gra posiada 3 poziomy trudności.",
-    "Dostępne są 3 języki: polski, angielski oraz chorwacki"
+    "Dostępne są 3 języki: polski, angielski oraz chorwacki",
+    "Zobacz więcej"
   ];
   const english = [
     "About me",
@@ -40,7 +41,8 @@ export const translate = (lang) => {
     "Download APK file", // 15
     "Memoo is a game where you need to match pairs of tiles. You turn over one tiles and try to find a matching tile.",
     "The game has 3 levels of difficulty.",
-    "There are 3 languages available: Polish, English and Croatian."
+    "There are 3 languages available: Polish, English and Croatian.",
+    "See more"
   ]
   const language = (lang === 'polish') ? polish : english;
   return (

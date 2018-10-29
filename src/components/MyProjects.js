@@ -10,7 +10,7 @@ export default class MyProjects extends React.Component {
       return (
         <article key={i}>
           <a href={p.href}>
-            <img src={p.src} alt={p.alt} width="100%" />
+            <img src={p.src} alt={p.alt} width="100%" height="100%" />
           </a>
         </article>
       )
